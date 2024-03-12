@@ -48,11 +48,11 @@ def dashboard(request):
     if isLogin(request)==False:
         return redirect('login')
     
-    if request.session.get('user_role','none')=="admin":
+    if request.session.get('user_role','none')== "admin":
         return render(request,"index.html")
-    elif request.session.get('user_role','none')=="teacher":
+    elif request.session.get('user_role','none')== "teacher":
         return render(request,"teacherindex.html")
-    elif request.session.get('user_role','none')=="student":
+    elif request.session.get('user_role','none')== "student":
         return render(request,"studentindex.html")
     
     
