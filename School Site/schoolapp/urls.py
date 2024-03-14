@@ -21,7 +21,6 @@ from schoolapp import views
 urlpatterns = [
 
     path("",views.login,name="login"),
-    path("index",views.index,name="index"),
     path('dashboard/', views.dashboard,name="dashboard"),
     path('logout/', views.logout,name="logout")
 ]

@@ -14,7 +14,7 @@ def login(request):
                 request.session['is_login'] = True
                 role = request.POST['role']
                
-                if select_user.role == role and role == "admin":
+                if select_user.role == role == "admin":
                     request.session['user_role'] = "admin"
                     return redirect('dashboard')
                 elif select_user.role == role and role == "teacher":
@@ -26,13 +26,13 @@ def login(request):
                 else:
                  return render(request,"login.html",{"msg":"Wrong Role Pass"}) 
             else:
-                return render(request,"login.html",{"msg":"Worng password"})         
+                return render(request,"login.html",{"msg":"Wrong password"})         
         except:
                   
-            return render(request,"login.html",{"msg":"Worng email id or password"})
+            return render(request,"login.html",{"msg":"Wrong email id or password"})
     else:
         try:
-            if  request.session['is_login']==True:
+            if request.session['is_login']==True:
                 return redirect('dashboard')
         except:
             return render(request,"login.html")
@@ -54,10 +54,7 @@ def dashboard(request):
         return render(request,"teacherindex.html")
     elif request.session.get('user_role','none')== "student":
         return render(request,"studentindex.html")
-    
-    
-def index(request):
-    return render(request,"index.html")
+  
 
 
 def logout(request):
