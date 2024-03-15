@@ -24,7 +24,7 @@
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
                                     <form id="login_form" action= "{% url 'login' %}" method="post">
-                                        
+                                       
                                            {% csrf_token %}
                                         {{msg}}
                                         <div class="form-row align-items-center">
@@ -51,6 +51,7 @@
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary btn-block">Sign in</button>
                                         </div>
+                                      
                                     </form>
                                    
                                 </div>
@@ -72,35 +73,9 @@
     <script src="/static/js/custom.min.js"></script>
     <script src="/static/js/dlabnav-init.js"></script>
 
-    {% comment %} <script type="text/javascript"> {% endcomment %}
-        function submitlogin()
-        {
-            var e = document.getElementById("select_role");
-            var role = e.options[e.selectedIndex].value;
+   
 
-           if(role==1)
-            {
-                 document.getElementById('login_form').action = "index.html";
-            }
-            else if(role==2)
-            {
-                 document.getElementById('login_form').action = "teacherindex.html";
-            }
-            else if(role==3)
-            {
-                 document.getElementById('login_form').action = "studentindex.html";
-            }
-             else
-            {
-                    alert("please select one role")
-                 // document.getElementById('login_form').action = "index.html";
-            }
-           
-            document.getElementById("login_form").submit();
-
-        }
-
-    </script>
+ 
 
 </body>
 

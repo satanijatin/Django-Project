@@ -62,3 +62,9 @@ def logout(request):
     del request.session['email']
     del request.session['is_login']
     return redirect('login')
+
+def demo(request):
+    return render(request,"demo.html")
+
+def addnotes(request):
+    return render(request,"addnotes.html")
